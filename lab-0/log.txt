@@ -1,0 +1,9 @@
+1. Creating and Cloning git repository
+2. Creating a folder named lab-0
+3. Creating a text file inside lab-0
+4. Push it into the repository with commit message
+5. Creating a html file
+6. Using table tags insert name, id, cgpa, department
+7. Push the file
+8. Creating a log file to keep all the records
+9. Push the updated files
