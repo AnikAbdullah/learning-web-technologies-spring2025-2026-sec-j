@@ -1,0 +1,29 @@
+<students>
+    <student>
+        <slno>23</slno>
+        <name>John Carter</name>
+        <addmissionDate>
+            <day>25</day>
+            <month>12</month>
+            <year>2015</year>
+        </addmissionDate>
+    </student>
+    <student>
+        <slno>29</slno>
+        <name>Bob Marshal</name>
+        <addmissionDate>
+            <day>13</day>
+            <month>01</month>
+            <year>1999</year>
+        </addmissionDate>
+    </student>
+    <student>
+        <slno>35</slno>
+        <name>Clerk Kent</name>
+        <addmissionDate>
+            <day>17</day>
+            <month>06</month>
+            <year>2005</year>
+        </addmissionDate>
+    </student>
+</students>
