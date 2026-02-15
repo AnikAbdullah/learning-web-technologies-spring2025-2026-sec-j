@@ -1,7 +1,8 @@
 <employees>
     <employee>
         <id>1</id>
-        <name>John Doe</name>
+        <firstName>John</firstName>
+        <lastName>Doe</lastName>
         <address>
             <flat></flat>
             <house>H#38</house>
@@ -14,7 +15,8 @@
     </employee>
     <employee>
         <id>2</id>
-        <name>Mark Zuckerberg</name>
+        <firstName>Mark</firstName>
+        <lastName>Zuckerberg</lastName>
         <address>
             <flat>Flat# A/1</flat>
             <house>H#20</house>
@@ -27,7 +29,8 @@
     </employee>
     <employee>
         <id>3</id>
-        <name>Ala Voski</name>
+        <firstName>Ala</firstName>
+        <lastName>Voski</lastName>
         <address>
             <flat></flat>
             <house>H# 38</house>

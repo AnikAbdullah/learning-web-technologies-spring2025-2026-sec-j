@@ -1,7 +1,8 @@
 <students>
     <student>
         <slno>23</slno>
-        <name>John Carter</name>
+        <firstName>John</firstName>
+        <lastName>Carter</lastName>
         <addmissionDate>
             <day>25</day>
             <month>12</month>
@@ -10,7 +11,8 @@
     </student>
     <student>
         <slno>29</slno>
-        <name>Bob Marshal</name>
+        <firstName>Bob</firstName>
+        <lastName>Marshal</lastName>
         <addmissionDate>
             <day>13</day>
             <month>01</month>
@@ -19,7 +21,8 @@
     </student>
     <student>
         <slno>35</slno>
-        <name>Clerk Kent</name>
+        <firstName>Clerk</firstName>
+        <lastName>Kent</lastName>
         <addmissionDate>
             <day>17</day>
             <month>06</month>
