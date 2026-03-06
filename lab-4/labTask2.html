@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lab Task - 2</title>
+    <style>
+      #errorMsg {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form onsubmit="return validateEmail();">
+      <table>
+        <tr>
+          <td><label>Email</label></td>
+        </tr>
+
+        <tr>
+          <td><input type="text" id="email" /></td>
+        </tr>
+
+        <tr>
+          <td><span id="errorMsg"></span></td>
+        </tr>
+
+        <tr>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      function validateEmail() {
+        let email = document.getElementById("email").value;
+        let errMsg = document.getElementById("errorMsg");
+
+        errMsg.innerHTML = "";
+
+        if (email == "") {
+          errMsg.innerHTML = "Email cannot be empty!";
+          return false;
+        }
+
+        if (!email.includes("@") || !email.includes(".")) {
+          errMsg.innerHTML = "Enter a valid email";
+          return false;
+        }
+
+        alert("Email submitted successfully!");
+        return true;
+      }
+    </script>
+  </body>
+</html>
