@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Degree Validation</title>
+    <style>
+      .errorMsg {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form onsubmit="return validateDegree();">
+      <fieldset>
+        <legend>Degree</legend>
+        <input type="checkbox" name="degree" value="SSC" /> SSC
+        <input type="checkbox" name="degree" value="HSC" /> HSC
+        <input type="checkbox" name="degree" value="BSc" /> BSc <br /><span
+          id="errorMsg"
+          class="errorMsg"
+        ></span>
+        <br /><input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+
+    <script>
+      function validateDegree() {
+        let checked = document.querySelectorAll('input[name="degree"]:checked');
+        if (checked.length == 0) {
+          document.getElementById("errorMsg").innerHTML =
+            "Select at least one degree";
+          return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+      }
+    </script>
+  </body>
+</html>
