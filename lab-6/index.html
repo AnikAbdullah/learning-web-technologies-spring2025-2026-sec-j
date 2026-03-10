@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+  </head>
+
+  <body>
+    <h2 style="text-align: center">Tic Tac Toe</h2>
+
+    <div style="text-align: center">
+      X: <span id="scoreX">0</span> | O: <span id="scoreO">0</span> | Draws:
+      <span id="scoreDraw">0</span>
+    </div>
+
+    <div id="status" style="text-align: center; margin-top: 10px">
+      Player X's turn
+    </div>
+
+    <div id="board"></div>
+
+    <div style="text-align: center; margin-top: 15px">
+      <button id="newGame">New Game</button>
+      <button id="resetScore">Reset Scores</button>
+    </div>
+
+    <script>
+      let board = ["", "", "", "", "", "", "", "", ""];
+      let boardButtons = [];
+
+      let currentPlayer = "X";
+      let gameActive = true;
+
+      let xScore = 0;
+      let oScore = 0;
+      let drawScore = 0;
+
+      let winPatterns = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
+
+      let boardDiv = document.getElementById("board");
+
+      boardDiv.style.display = "grid";
+      boardDiv.style.gridTemplateColumns = "repeat(3,100px)";
+      boardDiv.style.gap = "5px";
+      boardDiv.style.width = "310px";
+      boardDiv.style.margin = "20px auto";
+
+      function createBoard() {
+        boardDiv.innerHTML = "";
+        boardButtons = [];
+
+        for (let i = 0; i < 9; i++) {
+          let btn = document.createElement("button");
+          btn.style.width = "100px";
+          btn.style.height = "100px";
+          btn.style.fontSize = "32px";
+          btn.style.fontWeight = "bold";
+          btn.style.cursor = "pointer";
+
+          btn.onclick = function () {
+            playMove(i, btn);
+          };
+
+          boardDiv.appendChild(btn);
+          boardButtons.push(btn);
+        }
+      }
+
+      function playMove(index, btn) {
+        if (!gameActive || board[index] != "") return;
+
+        board[index] = currentPlayer;
+        btn.innerText = currentPlayer;
+        btn.disabled = true;
+
+        let win = checkWinner();
+        if (win) {
+          for (let i = 0; i < win.length; i++) {
+            boardButtons[win[i]].style.backgroundColor = "lightgreen";
+          }
+
+          document.getElementById("status").innerText =
+            "Player " + currentPlayer + " wins";
+
+          if (currentPlayer == "X") xScore++;
+          else oScore++;
+
+          updateScores();
+          gameActive = false;
+          return;
+        }
+
+        if (checkDraw()) {
+          document.getElementById("status").innerText = "Match Drawn!";
+          drawScore++;
+          updateScores();
+          gameActive = false;
+          return;
+        }
+
+        currentPlayer = currentPlayer == "X" ? "O" : "X";
+        document.getElementById("status").innerText =
+          "Player " + currentPlayer + "'s turn";
+      }
+
+      function checkWinner() {
+        for (let i = 0; i < winPatterns.length; i++) {
+          let a = winPatterns[i][0];
+          let b = winPatterns[i][1];
+          let c = winPatterns[i][2];
+          if (board[a] != "" && board[a] == board[b] && board[b] == board[c]) {
+            return winPatterns[i];
+          }
+        }
+        return null;
+      }
+
+      function checkDraw() {
+        for (let i = 0; i < board.length; i++) {
+          if (board[i] == "") return false;
+        }
+        return true;
+      }
+
+      function updateScores() {
+        document.getElementById("scoreX").innerText = xScore;
+        document.getElementById("scoreO").innerText = oScore;
+        document.getElementById("scoreDraw").innerText = drawScore;
+      }
+
+      function newGame() {
+        board = ["", "", "", "", "", "", "", "", ""];
+        currentPlayer = "X";
+        gameActive = true;
+        document.getElementById("status").innerText = "Player X's turn";
+        createBoard();
+      }
+
+      function resetScores() {
+        xScore = 0;
+        oScore = 0;
+        drawScore = 0;
+        updateScores();
+        newGame();
+      }
+
+      document.getElementById("newGame").onclick = newGame;
+      document.getElementById("resetScore").onclick = resetScores;
+
+      createBoard();
+    </script>
+  </body>
+</html>
