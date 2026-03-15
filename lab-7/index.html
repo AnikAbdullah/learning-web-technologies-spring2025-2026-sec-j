@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>Lab 7 - Product Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h2>Product Management Page</h2>
+
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+      </tr>
+
+      <tr>
+        <td>Product A</td>
+        <td>1000</td>
+        <td>
+          <input
+            type="number"
+            id="q1"
+            value="0"
+            oninput="updateProduct('q1', 't1', 1000)"
+          />
+        </td>
+        <td><input type="text" id="t1" value="0" readonly /></td>
+      </tr>
+
+      <tr>
+        <td>Product B</td>
+        <td>500</td>
+        <td>
+          <input
+            type="number"
+            id="q2"
+            value="0"
+            oninput="updateProduct('q2', 't2', 500)"
+          />
+        </td>
+        <td><input type="text" id="t2" value="0" readonly /></td>
+      </tr>
+
+      <tr>
+        <td>Product C</td>
+        <td>250</td>
+        <td>
+          <input
+            type="number"
+            id="q3"
+            value="0"
+            oninput="updateProduct('q3', 't3', 250)"
+          />
+        </td>
+        <td><input type="text" id="t3" value="0" readonly /></td>
+      </tr>
+
+      <tr>
+        <td colspan="3"><b>Grand Total</b></td>
+        <td><input type="text" id="grand" value="0" readonly /></td>
+      </tr>
+    </table>
+
+    <br />
+    <button onclick="resetData()">Reset</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
