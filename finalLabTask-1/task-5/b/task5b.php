@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['ssc']) || isset($_POST['hsc']) || isset($_POST['bsc'])) {
+if (isset($_POST['ssc']) || isset($_POST['hsc']) || isset($_POST['bsc']) || isset($_POST['msc'])) {
     $degrees = [];
     
     if (isset($_POST['ssc'])) {
@@ -11,6 +11,9 @@ if (isset($_POST['ssc']) || isset($_POST['hsc']) || isset($_POST['bsc'])) {
     if (isset($_POST['bsc'])) {
         $degrees[] = $_POST['bsc'];
     }
+    if (isset($_POST['msc'])) {
+        $degrees[] = $_POST['msc'];
+      }
     
     echo "<p>Your selected degrees are: " . implode(", ", $degrees) . "</p>";
 }
@@ -19,7 +22,7 @@ if (isset($_POST['ssc']) || isset($_POST['hsc']) || isset($_POST['bsc'])) {
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Task 5 - a</title>
+    <title>Task 5 - b</title>
   </head>
   <body>
     <form action="" method="post">
@@ -34,6 +37,9 @@ if (isset($_POST['ssc']) || isset($_POST['hsc']) || isset($_POST['bsc'])) {
         
         <input type="checkbox" name="bsc" value="BSc" />
         <label for="bsc">BSc</label>
+
+        <input type="checkbox" name="msc" value="MSc" />
+        <label for="msc">MSc</label>
         
         <br><br>
         <input type="submit" value="Submit" />
