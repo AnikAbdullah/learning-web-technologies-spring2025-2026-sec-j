@@ -8,7 +8,7 @@ if (isset($_POST['email'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Task 2 - c</title>
+    <title>Task 2  - c</title>
 </head>
 <body>
 
