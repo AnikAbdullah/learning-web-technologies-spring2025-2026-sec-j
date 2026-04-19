@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
     <div class="top">
         <div class="logo">XCompany</div>
         <div class="menu">
-            Logged in as <a href="changeProfilePicture.php"><?php echo $username; ?></a> |
+            Logged in as <a href="viewProfile.php"><?php echo $username; ?></a> |
             <a href="logout.php">Logout</a>
         </div>
     </div>
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
         <div class="right">
             <form method="post" enctype="multipart/form-data">
                 <fieldset>
-                    <legend>PROFILE PICTURE</legend>
+                    <legend><h3>PROFILE PICTURE</h3></legend>
 
                     <br>
 
