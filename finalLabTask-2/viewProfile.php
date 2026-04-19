@@ -49,7 +49,7 @@ $user = $_SESSION['users'][$username];
 
         <div class="right">
             <fieldset>
-                <legend>PROFILE</legend>
+                <legend><h3>PROFILE</h3></legend>
 
                 <div class="profile-info">
                     Name : <?php echo $user['name']; ?>
