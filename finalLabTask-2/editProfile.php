@@ -57,7 +57,7 @@ $year = isset($dobParts[2]) ? $dobParts[2] : "";
     <div class="top">
         <div class="logo">XCompany</div>
         <div class="menu">
-            Logged in as <a href="editProfile.php"><?php echo $username; ?></a> |
+            Logged in as <a href="viewProfile.php"><?php echo $username; ?></a> |
             <a href="logout.php">Logout</a>
         </div>
     </div>
@@ -79,7 +79,7 @@ $year = isset($dobParts[2]) ? $dobParts[2] : "";
         <div class="right">
             <form method="post">
                 <fieldset>
-                    <legend>EDIT PROFILE</legend>
+                    <legend><h3>EDIT PROFILE</h3></legend>
 
                     Name<br>
                     <input type="text" name="name" value="<?php echo $user['name']; ?>">
