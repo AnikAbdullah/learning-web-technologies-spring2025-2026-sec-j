@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
         <div class="right">
             <form method="post">
                 <fieldset>
-                    <legend>CHANGE PASSWORD</legend>
+                    <legend><h3>CHANGE PASSWORD</h3></legend>
 
                     Current Password<br>
                     <input type="password" name="currentPassword">
