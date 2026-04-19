@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+.main {
+  width: 800px;
+  margin: 20px auto;
+  background: white;
+  border: 1px solid black;
+}
+
+.top {
+  overflow: hidden;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.logo {
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.menu {
+  float: right;
+  margin-top: 10px;
+}
+
+.body {
+  min-height: 300px;
+  padding: 20px;
+}
+
+.left {
+  width: 220px;
+  float: left;
+  padding: 20px;
+  border-right: 1px solid black;
+  min-height: 300px;
+  box-sizing: border-box;
+}
+
+.right {
+  width: 579px;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.footer {
+  clear: both;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid black;
+}
