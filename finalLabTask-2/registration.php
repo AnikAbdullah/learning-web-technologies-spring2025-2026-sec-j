@@ -4,6 +4,7 @@ include("session.php");
 $msg = "";
 
 if (isset($_POST['submit'])) {
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $username = $_POST['username'];
@@ -14,19 +15,26 @@ if (isset($_POST['submit'])) {
     $month = $_POST['month'];
     $year = $_POST['year'];
 
-    $dob = $day . "/" . $month . "/" . $year;
+    if ($name != "" && $email != "" && $username != "" && $password != "" && $confirm != "" && $gender != "" && $day != "" && $month != "" && $year != "") {
 
-    $_SESSION['users'][$username] = [
-        "name" => $name,
-        "email" => $email,
-        "username" => $username,
-        "password" => $password,
-        "gender" => $gender,
-        "dob" => $dob,
-        "picture" => ""
-    ];
+        $dob = $day . "/" . $month . "/" . $year;
 
-    $msg = "Registration completed";
+        $_SESSION['users'][$username] = [
+            "name" => $name,
+            "email" => $email,
+            "username" => $username,
+            "password" => $password,
+            "gender" => $gender,
+            "dob" => $dob,
+            "picture" => ""
+        ];
+
+        header("Location: login.php");
+        exit();
+
+    } else {
+        $msg = "Please fill all fields";
+    }
 }
 ?>
 
