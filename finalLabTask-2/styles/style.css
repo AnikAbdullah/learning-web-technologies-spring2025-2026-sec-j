@@ -66,3 +66,20 @@ body {
   width: 420px;
   margin: 0 auto;
 }
+
+.profile-info {
+  width: 60%;
+  float: left;
+}
+
+.profile-pic-box {
+  width: 150px;
+  float: right;
+  text-align: center;
+}
+
+.profile-pic-box img {
+  width: 120px;
+  height: 120px;
+  border: 1px solid black;
+}
