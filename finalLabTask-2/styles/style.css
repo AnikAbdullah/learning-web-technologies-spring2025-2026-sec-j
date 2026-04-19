@@ -54,3 +54,15 @@ body {
   padding: 15px;
   border-top: 1px solid black;
 }
+
+.box {
+  width: 420px;
+  margin: 20px auto;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.form-area {
+  width: 420px;
+  margin: 0 auto;
+}
