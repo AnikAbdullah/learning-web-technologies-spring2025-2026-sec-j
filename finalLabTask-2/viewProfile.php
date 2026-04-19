@@ -48,34 +48,35 @@ $user = $_SESSION['users'][$username];
         </div>
 
         <div class="right">
-            <h3>PROFILE</h3>
-            <hr>
+            <fieldset>
+                <legend>PROFILE</legend>
 
-            <div class="profile-info">
-                Name : <?php echo $user['name']; ?>
-                <hr>
+                <div class="profile-info">
+                    Name : <?php echo $user['name']; ?>
+                    <hr>
 
-                Email : <?php echo $user['email']; ?>
-                <hr>
+                    Email : <?php echo $user['email']; ?>
+                    <hr>
 
-                Gender : <?php echo $user['gender']; ?>
-                <hr>
+                    Gender : <?php echo $user['gender']; ?>
+                    <hr>
 
-                Date of Birth : <?php echo $user['dob']; ?>
-                <hr>
+                    Date of Birth : <?php echo $user['dob']; ?>
+                    <hr>
 
-                <a href="edit_profile.php">Edit Profile</a>
-            </div>
+                    <a href="editProfile.php">Edit Profile</a>
+                </div>
 
-            <div class="profile-pic-box">
-                <?php
-                if ($user['picture'] != "") {
-                    echo '<img src="'.$user['picture'].'" alt="Profile Picture">';
-                } else {
-                    echo '<img src="uploads/default.png" alt="Profile Picture">';
-                }
-                ?>
-            </div>
+                <div class="profile-pic-box">
+                    <?php
+                    if ($user['picture'] != "") {
+                        echo '<img src="'.$user['picture'].'" alt="Profile Picture">';
+                    } else {
+                        echo 'No Picture';
+                    }
+                    ?>
+                </div>
+            </fieldset>
         </div>
     </div>
 
