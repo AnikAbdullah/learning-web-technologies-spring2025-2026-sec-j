@@ -1,17 +1,23 @@
-<?php include("session.php"); ?>
+<?php
+include('session.php');
 
-<!DOCTYPE html>
+if (isset($_SESSION['status']) && $_SESSION['status'] == true) {
+    header('location: dashboard.php');
+    exit();
+}
+?>
+
 <html>
 <head>
     <title>Login</title>
 </head>
 <body>
 
-<h2>Product Management Login</h2>
+<h3>LOGIN</h3>
 
 <form method="post" action="loginCheck.php">
     <fieldset>
-        <legend>LOGIN</legend>
+        <legend>Login</legend>
 
         User Name<br>
         <input type="text" name="username"><br><br>
@@ -20,10 +26,9 @@
         <input type="password" name="password"><br><br>
 
         <input type="submit" name="submit" value="Login">
+        <a href="registration.php">Registration</a>
     </fieldset>
 </form>
-
-<br>
 
 </body>
 </html>

@@ -1,24 +1,25 @@
 <?php
-include("session.php");
+include('session.php');
 
 if (isset($_POST['submit'])) {
-
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if ($username == $password && $username != "") {
-
+    if (
+        isset($_SESSION['users'][$username]) &&
+        $_SESSION['users'][$username]['password'] == $password
+    ) {
         $_SESSION['status'] = true;
         $_SESSION['username'] = $username;
 
-        header("Location: dashboard.php");
+        header('location: dashboard.php');
         exit();
-
     } else {
-        echo "Invalid login! Username and password must match.";
+        header('location: login.php');
+        exit();
     }
-
 } else {
-    echo "Please submit form.";
+    header('location: login.php');
+    exit();
 }
 ?>
