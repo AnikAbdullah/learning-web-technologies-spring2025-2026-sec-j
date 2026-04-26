@@ -24,7 +24,6 @@
 </form>
 
 <br>
-<a href="registration.php">Registration</a>
 
 </body>
 </html>
