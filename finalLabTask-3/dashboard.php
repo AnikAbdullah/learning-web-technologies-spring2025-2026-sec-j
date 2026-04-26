@@ -28,7 +28,14 @@ if (isset($_POST['add'])) {
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
 
-    if ($name != "" && $price != "" && $quantity != "") {
+    if (
+        $name != "" &&
+        $price != "" &&
+        $quantity != "" &&
+        ctype_alpha(str_replace(" ", "", $name)) &&
+        is_numeric($price) &&
+        is_numeric($quantity)
+    ) {
         $_SESSION['products'][] = array(
             'name' => $name,
             'price' => $price,
@@ -41,10 +48,22 @@ if (isset($_POST['add'])) {
 
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
 
-    $_SESSION['products'][$id]['name'] = $_POST['name'];
-    $_SESSION['products'][$id]['price'] = $_POST['price'];
-    $_SESSION['products'][$id]['quantity'] = $_POST['quantity'];
+    if (
+        $name != "" &&
+        $price != "" &&
+        $quantity != "" &&
+        ctype_alpha(str_replace(" ", "", $name)) &&
+        is_numeric($price) &&
+        is_numeric($quantity)
+    ) {
+        $_SESSION['products'][$id]['name'] = $name;
+        $_SESSION['products'][$id]['price'] = $price;
+        $_SESSION['products'][$id]['quantity'] = $quantity;
+    }
 
     header('location: dashboard.php');
 }
@@ -79,10 +98,10 @@ Logged in as <?php echo $_SESSION['username']; ?> |
         <input type="text" name="name" value="<?php if ($editProduct != null) echo $editProduct['name']; ?>"><br><br>
 
         Price<br>
-        <input type="text" name="price" value="<?php if ($editProduct != null) echo $editProduct['price']; ?>"><br><br>
+        <input type="number" name="price" value="<?php if ($editProduct != null) echo $editProduct['price']; ?>"><br><br>
 
         Quantity<br>
-        <input type="text" name="quantity" value="<?php if ($editProduct != null) echo $editProduct['quantity']; ?>"><br><br>
+        <input type="number" name="quantity" value="<?php if ($editProduct != null) echo $editProduct['quantity']; ?>"><br><br>
 
         <?php
         if ($editProduct != null) {
