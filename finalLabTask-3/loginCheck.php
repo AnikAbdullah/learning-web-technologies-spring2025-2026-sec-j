@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['status'] = true;
         $_SESSION['username'] = $username;
 
-        header("Location: productDashboard.php");
+        header("Location: dashboard.php");
         exit();
 
     } else {
