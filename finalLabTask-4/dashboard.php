@@ -1,9 +1,39 @@
 <?php
 include('session.php');
 
-if (!isset($_SESSION['status']) || $_SESSION['status'] != true) {
-    header('location: login.php');
-    exit();
+if (!isset($_SESSION['products'])) {
+    $_SESSION['products'] = array();
+}
+function showProducts()
+{
+    echo '<table border="1" cellpadding="5">
+            <tr>
+                <th>SL</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>';
+
+    for ($i = 0; $i < count($_SESSION['products']); $i++) {
+
+        if ($_SESSION['products'][$i]['name'] == "") {
+            continue;
+        }
+
+        echo "<tr>";
+        echo "<td>" . ($i + 1) . "</td>";
+        echo "<td>" . $_SESSION['products'][$i]['name'] . "</td>";
+        echo "<td>" . $_SESSION['products'][$i]['price'] . "</td>";
+        echo "<td>" . $_SESSION['products'][$i]['quantity'] . "</td>";
+        echo "<td>
+                <a href='dashboard.php?edit=$i'>Edit</a> |
+                <a href='dashboard.php?delete=$i'>Delete</a>
+              </td>";
+        echo "</tr>";
+    }
+
+    echo '</table>';
 }
 
 $editProduct = null;
@@ -116,35 +146,9 @@ Logged in as <?php echo $_SESSION['username']; ?> |
 
 <br>
 
-<table border="1" cellpadding="5">
-    <tr>
-        <th>SL</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Action</th>
-    </tr>
-
-    <?php
-    for ($i = 0; $i < count($_SESSION['products']); $i++) {
-
-        if ($_SESSION['products'][$i]['name'] == "") {
-            continue;
-        }
-
-        echo "<tr>";
-        echo "<td>" . ($i + 1) . "</td>";
-        echo "<td>" . $_SESSION['products'][$i]['name'] . "</td>";
-        echo "<td>" . $_SESSION['products'][$i]['price'] . "</td>";
-        echo "<td>" . $_SESSION['products'][$i]['quantity'] . "</td>";
-        echo "<td>
-                <a href='dashboard.php?edit=$i'>Edit</a> |
-                <a href='dashboard.php?delete=$i'>Delete</a>
-              </td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
+<div id="productTable">
+    <?php showProducts(); ?>
+</div>
 
 </body>
 </html>
