@@ -14,7 +14,6 @@ if (!isset($_SESSION['products'])) {
 <html>
 <head>
     <title>Dashboard</title>
-    <script src="script.js"></script>
 </head>
 <body>
 
@@ -78,5 +77,6 @@ Logged in as <?php echo $_SESSION['username']; ?> |
     </table>
 </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
